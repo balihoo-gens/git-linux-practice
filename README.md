@@ -16,14 +16,18 @@ Man works with any of git's subcommands as well. Try the below and skim the desc
 
 Make a note of any often mentioned terms that are not clear right here in this file:
 
-And ask me about them. I can tell you about things like 'remote tracking branches' and what "the current HEAD" means. 
+And ask me about them. I can tell you about things like 'remote tracking branches' and what "the current HEAD" means.
 Once you understand them, add the notes to this file as well. Do this whenever you have a question about anything in here;
  - put your question in this file in the relevant section
  - get an answer from a man page, me, google or someone else (in that order)
  - put the answer here with the question.
 
-1) Create a branch for yourself using "git branch"
-2) enter this new branch using 'git checkout'
-3) save this file
-4) look at the status of the git repository using 'git status'
-4) commit this file to your branch using 'git commit'. 
+1. Create a branch for yourself using 'git branch'
+    > what command can you use to show all the branches ?
+    > how does it indicate the current branch ?
+1. enter this new branch using 'git checkout'
+    > how can you use 'git checkout' to create AND enter a new branch at the same time?
+1. save this file
+    > explain what you see with 'git status'
+    > explain what you see with 'git diff'
+1. commit this file to your branch using 'git commit'.
