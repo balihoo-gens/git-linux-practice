@@ -23,15 +23,15 @@ Once you understand them, add the notes to this file as well. Do this whenever y
  - put the answer here with the question.
 
 1. Create a branch for yourself using 'git branch'
-    > what command can you use to show all the branches ?
-    > how does it indicate the current branch ?
+    - what command can you use to show all the branches ?
+    - how does it indicate the current branch ?
 1. enter this new branch using 'git checkout'
-    > how can you use 'git checkout' to create AND enter a new branch at the same time?
+    - how can you use 'git checkout' to create AND enter a new branch at the same time?
 1. save this file
-    > explain what you see with 'git status'
-    > explain what you see with 'git diff'
+    - explain what you see with 'git status'
+    - explain what you see with 'git diff'
 1. commit this file to your branch using 'git add' followed by 'git commit'.
-    > what does the -a option of git commit do?
-    > what does the -m option of git commit do?
-    > save this file again with the answers to the above two questions, but now using 'git commit' with the a and m options
+    - what does the -a option of git commit do?
+    - what does the -m option of git commit do?
+    - save this file again with the answers to the above two questions, but now using 'git commit' with the a and m options
 
