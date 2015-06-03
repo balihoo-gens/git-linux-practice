@@ -30,4 +30,8 @@ Once you understand them, add the notes to this file as well. Do this whenever y
 1. save this file
     > explain what you see with 'git status'
     > explain what you see with 'git diff'
-1. commit this file to your branch using 'git commit'.
+1. commit this file to your branch using 'git add' followed by 'git commit'.
+    > what does the -a option of git commit do?
+    > what does the -m option of git commit do?
+    > save this file again with the answers to the above two questions, but now using 'git commit' with the a and m options
+
