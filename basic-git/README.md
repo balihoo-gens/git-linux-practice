@@ -52,13 +52,17 @@ Once you understand them, add the notes to this file as well. Do this whenever y
     - what does the -a option of git commit do?
 		tells command to automatically stage files that have been modified/deleted
     - what does the -m option of git commit do?
+		lists changes not staged and untracked files
     - save this file again with the answers to the above two questions, but now using 'git commit' with the a and m options
     - note the 7 digit number git gives you when you commit. This is the commit id, also known as the SHA. The SHA is used to identify specific commits.
     - why do you always need to 'git add' new files ?
+		must add a file for it to be committed--needs to get to staging area to be committed
 1. use 'git log' to see the commit history.
     - what does the --oneline option do ?
+		displays a condensed version of the information, showing only the SHA and the commit message
     - what does the -n option do ?
     - insert the output of 'git log --oneline -n 3' below
+		fatal: unrecognized argument: --online
     - save this file
 1. use 'git diff' to show your uncommitted changes
     - what are lines starting with + and - ?
