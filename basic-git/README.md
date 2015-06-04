@@ -20,7 +20,7 @@ fork = take source from someone's repository and apply own changes (create a cop
 commit = stores the contents of the index in a new commit w log messages describing changes
 local vs remote = 
 checkout = navigate branches created by git branch, updates files in directory
-merged = 
+merged = join development histories together
 tarball = 
 master = the default head in every repository
 commit messages = to communicate with the rest of the team
@@ -77,7 +77,7 @@ Once you understand them, add the notes to this file as well. Do this whenever y
 1. commit these changes with the message "before first push"
 1. push your branch up to github using 'git push'
     - what is 'origin' ?
-		remote repository URL specified by 
+		remote repository URL distinguished by keyword origin
     - what is the -u option for when using 'git push'
 		set upstream; adds tracking reference
 
