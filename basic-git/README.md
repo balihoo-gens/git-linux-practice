@@ -22,11 +22,11 @@ local vs remote =
 checkout = navigate branches created by git branch, updates files in directory
 merged = 
 tarball = 
-master = 
+master = the default head in every repository
 commit messages = to communicate with the rest of the team
 remote tracking branches = 
 HEAD = current snapshot
-the current HEAD = 
+the current HEAD = the current head, commit object
 
 And ask me about them. I can tell you about things like 'remote tracking branches' and what "the current HEAD" means.
 Once you understand them, add the notes to this file as well. Do this whenever you have a question about anything in here;
@@ -66,12 +66,18 @@ Once you understand them, add the notes to this file as well. Do this whenever y
     - save this file
 1. use 'git diff' to show your uncommitted changes
     - what are lines starting with + and - ?
+		lines starting with a + are highlighted green and include uncommitted changes
     - use git log and pick the SHA of some commit from the list.
     - what does 'git diff <SHA>..HEAD' tell you? Try it with several SHAs
+		shows updates before/after commit at that particular time??
     - what is HEAD ?
+		the current branch
     - also try the diff between two SHAs
+		git diff d35be19 5d075ef
 1. commit these changes with the message "before first push"
 1. push your branch up to github using 'git push'
     - what is 'origin' ?
+		remote repository URL specified by 
     - what is the -u option for when using 'git push'
+		set upstream; adds tracking reference
 
