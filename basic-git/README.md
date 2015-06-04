@@ -14,6 +14,19 @@ Man works with any of git's subcommands as well. Try the below and skim the desc
 
 Make a note of any often mentioned terms that are not clear right here in this file:
 
+branch = represents independent line of development--to request brand new working directory
+repository = where history of work is stored
+fork = take source from someone's repository and apply own changes (create a copy, do work, commit or store changes)
+commit = stores the contents of the index in a new commit w log messages describing changes
+local vs remote = 
+checkout = navigate branches created by git branch, updates files in directory
+merged = 
+tarball = 
+master = 
+remote tracking branches = 
+HEAD = current snapshot
+the current HEAD = 
+
 And ask me about them. I can tell you about things like 'remote tracking branches' and what "the current HEAD" means.
 Once you understand them, add the notes to this file as well. Do this whenever you have a question about anything in here;
  - put your question in this file in the relevant section
@@ -22,14 +35,21 @@ Once you understand them, add the notes to this file as well. Do this whenever y
 
 1. Create a branch for yourself using 'git branch'
     - what command can you use to show all the branches ?
+		-a shows all branches
     - how does it indicate the current branch ?
+		current branch is highlighted with an asterix
 1. enter this new branch using 'git checkout'
     - how can you use 'git checkout' to create AND enter a new branch at the same time?
+		git checkout -b <new-branch> 
+		(The -b instructs to run new branch before??)
 1. save this file
     - explain what you see with 'git status'
+		Changes not staged for commit and untracked files in branch new-branch aka shows state of the project
     - explain what you see with 'git diff'
+		shows changes to (this) file
 1. commit this file to your branch using 'git add' followed by 'git commit'.
     - what does the -a option of git commit do?
+		tells command to automatically stage files that have been modified/deleted
     - what does the -m option of git commit do?
     - save this file again with the answers to the above two questions, but now using 'git commit' with the a and m options
     - note the 7 digit number git gives you when you commit. This is the commit id, also known as the SHA. The SHA is used to identify specific commits.
