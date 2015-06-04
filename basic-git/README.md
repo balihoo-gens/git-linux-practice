@@ -23,6 +23,7 @@ checkout = navigate branches created by git branch, updates files in directory
 merged = 
 tarball = 
 master = 
+commit messages = to communicate with the rest of the team
 remote tracking branches = 
 HEAD = current snapshot
 the current HEAD = 
