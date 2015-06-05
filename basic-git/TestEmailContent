@@ -1,0 +1,40 @@
+Hi Elisa,
+
+I went through your changes; great job on getting through this quickly! I hope it helped you get a better understanding of git. I'll work on the rest of the exercises today.
+
+Here are a few comments on your additions to the README.md
+
+1) As you may have noticed, the formatting you put in your editor did not show up as well on the github site. This is because the format is in MarkDown, which github tries to interpret. It is helpful to learn how to format a markdown document, and add a nicely formatted README.md to every new directory you create. Here is the link to the official MarkDown documentation.
+
+2) For a number of the questions you copied the text from the man page. This is fine if you truly understand what the official description means, but that is hard for me to assess. My intent for those questions is for you to try out the option, observe what it does, then describe what you see in your own words.
+
+3) Basic-Git
+FORK AND REMOTES: "fork" is a github concept, not git. In git terms, all it does underneath the covers is to add a 'remote'. So, it clones the repo into your account, adding a remote called 'upstream'. If you end up working on open source projects, you will run into these concepts a lot. Not many git users fully understand the use of multiple remotes, (and you do not need to know it), but looking into it a bit will give you a more thorough understanding of how it all works. This is a decent explanation of git remotes
+
+MASTER VS HEAD: master is not equivalent to 'head'. 'master' is the default name of the root branch in repositories. Sometimes this changes. For example, in most of our repositories the default branch is called 'develop' (see GitFlow)
+HEAD is simply the name of the commit you are currently looking at, which is often the last commit in the current branch. However, this can change. Just for fun, do a git log in your branch and pick one of the older SHAs (e.g. 9de72d9). You can check that commit out, just like you would check out a branch: "git checkout 9de72d9". This now puts HEAD at commit 9de72d9. This is useful whenever you want to step back in history. Note that you can now branch off that commit. I'll put something about this in the exercises.
+
+COMMIT MESSAGES: yes! they are to communicate with the rest of the team, but equally important it is to describe what you did and why you did it for yourself at a later date. Multi-line commit messages are allowed, so be verbose. Once you have worked for a few months with many people on a code-base, and you need to know why something was changed 5 months ago, you want to be able to read that in the commit messages. Here at Balihoo we often include a 'story' or 'bug' number that references additional information in our bug tracking system (jira).
+
+CHECKOUT -B: you are correct, all it does is first create the new branch, and then check it out. It is a shortcut. There are reasons to create a new branch without going immediately to it, but most of the time you will create a new branch with checkout -b. Make sure to use a descriptive name for your branch (new-branch is not a great name :-)) ; you may have a dozen or so active branches open, some of which you have not worked on for weeks. If it doesn't have an obvious name, you will have to look at the log, or (worse!) the code to figure out what you were working on.
+
+COMMIT -M: The m option does not list changes. it gives you the option to supply a commit message to the commit without git opening an editor for you. I often use 'git commit -am "removed debugging cruft"' to commit all modified files with that message.
+
+OUTPUT OF GIT --ONELINE: you got an error because you misspelled 'oneline' as 'online'. Try again if you don't mind.
+
++ AND -: you are not wrong in your particular case, but + and - do not just mean uncommitted changes. + indicates lines you added, and - indicates lines removed. When you change a line, it will show up in the diff twice, once as the old line with a - and once as the new line with a +. Try this with a file:
+a) edit a new file in your editor, paste in the contents of this email
+b) save, close, add and commit the file
+c) open it back up and change all (or most) the bold text to ALL UPPERCASE
+d) save, close and commit the file
+e) see that git diff shows you nothing (HEAD is at your latest changes)
+f) get the last two commit SHAs using git log
+g) look at "git diff <SHA1>..<SHA2>"
+h) compare it to doing "git diff HEAD~1"
+i) push your branch to github
+
+-U OPTION: you copied from the man page, but what does it really mean. Can you tell me when you should use it, and when it is not necessary ?
+
+4) Git merging and conflicts
+Let me know if you feel like you understand how merge conflicts arise and how to resolve them. 
+I am somewhat confused about your answer on #18; The change under HEAD should be the one from the clone you are currently in (HEAD points to your changes in this repo), while the change underneath the ==== line reflects the incoming change. Would you mind verifying what you saw? It may help to put the name of the repository (the-other-git-linux-practice or git-linux-practice) as the text in the conflict file.
