@@ -1,2 +1,6 @@
 This file is used to create and resolve conflicts
+<<<<<<< HEAD
 this is on two
+=======
+this is on one
+>>>>>>> one
