@@ -26,16 +26,16 @@ In this section we're going to create some situations where this is the case, an
 1. save and close the file
 1. commit your changes
 1. Try to push your changes to github (origin)
-  * why does this fail ?
+  * why does this fail ?  
 	says that updates were rejected because remote contains work I do not have locally. (another repository is pushing to the same ref)--must first integrate the remote changes before pushing again. 
 1. use 'git pull' to get any changes from github
   * see that git complains about conflicts
 1. open the file 'conflict' in your editor
   * notice that the changes you made are both in this file, surrounded by '<<<<<<<HEAD', '==========' and '>>>>>>>>>>>>'
   * Where does the section between HEAD and ===== come from ?
-	comes from the first conflict file I edited- that located in the the-other-git-linux-practice directory
+	comes from the first conflict file I edited- that located in the the-other-git-linux-practice directory (sentence = 'the-other-git-linux-practice')
   * Where does the section between ====== and >>>>>> come from ?
-	comes from the second conflict file I edited- that located in git-linux-practice directory
+	comes from the second conflict file I edited- that located in git-linux-practice directory (sentence = 'git-linux-practice')
 1. Edit the file such that both of your sentences are in the file, but remove the lines git added
 1. save and close this file and commit the changes with the message "resolved conflict"
 
