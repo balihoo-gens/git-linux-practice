@@ -36,13 +36,13 @@ Once you understand them, add the notes to this file as well. Do this whenever y
 
 1. Create a branch for yourself using 'git branch'
     - what command can you use to show all the branches ?
-		-a shows all branches
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-a shows all branches
     - how does it indicate the current branch ?
 		current branch is highlighted with an asterix
 1. enter this new branch using 'git checkout'
     - how can you use 'git checkout' to create AND enter a new branch at the same time?
 		git checkout -b <new-branch> 
-		(The -b instructs to run new branch before??)
+		(The -b instructs to run new branch before)
 1. save this file
     - explain what you see with 'git status'
 		Changes not staged for commit and untracked files in branch new-branch aka shows state of the project
