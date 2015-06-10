@@ -1,6 +1,14 @@
 This file is used to create and resolve conflicts
+<<<<<<< HEAD
 
 the-other-git-linux-practice
 
 git-linux-practice
 
+=======
+<<<<<<< HEAD
+this is on two
+=======
+this is on one
+>>>>>>> one
+>>>>>>> master
