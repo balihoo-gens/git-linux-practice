@@ -5,12 +5,14 @@ Conflicts with changes from others are not really different from local conflicts
 ## local branching
 Making lots of local branches is an essential skill to using git effectively. Initially, it may help you to keep a pen and paper handy and maintain a drawing of the git tree.
 
+
 1. Create a branch called GLP-001-AwesomeFeature  
 git branch GLP-001-AwesomeFeature
    - we use this naming convention here at Balihoo. GLP-001 would be your Jira story number, followed by a descriptive term
    - it is also convention to add the branch name to every commit message, in this form: "git commit -am "GLP-001-AwesomeFeature: fixed function foo, returning an empty array rather than null on error"
 1. On this new branch, create a file called listfunc.js  
 touch listfunc.js
+
 1. Add this code into it
 
 ```
@@ -85,13 +87,12 @@ claims that the branch is not fully merged
     - We know we want to get rid of it though, so try the suggested command with a capital -D  
 git branch -D GLP-001-BothAttempts
     - insert the output of 'git branch' below  
-  GLP-001-AttemptOne
-  GLP-001-AttemptTwo
-* GLP-001-AwesomeFeature
-  first-branch
+  GLP-001-AttemptOne  
+  GLP-001-AttemptTwo  
+* GLP-001-AwesomeFeature  
+  first-branch  
   master
-
-
+g
 ## rebasing
 Branching in git is very convenient and a nice way to keep all your work organized and separated. However, everyone that branches a lot ends up with a lot of branches and commits that need to be brought back together in a clean and organized manner. One of the best tools to do that is called 'rebase'. Rebasing is very powerful and can do many things, including some bad ones that can cost you work. So, best to learn well how it works.
 
@@ -101,7 +102,9 @@ It would not be surprising if something goes wrong during these exercises and th
     - stop reading when overwhelmed or confused. It is ok if this is right at the beginning. What is important to understand about rebase is this: it takes your local commits and applies them one-by-one on top of the branch you specify.
     - go back to the man page and review the first 4 graphs
 1. Create a new branch, once again called GLP-001-BothAttempts
+git checkout -b GLP-001-BothAttempts
 1. in this new branch, type 'git rebase GLP-001-AttemptOne'  
+
 
     - check git log to see what commits you now have here
 1. now type 'git rebase GLP-001-AttemptTwo'
@@ -143,3 +146,5 @@ Next time:
 ## reverting
 
 # cherry-picking
+
+
