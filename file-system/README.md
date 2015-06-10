@@ -26,7 +26,7 @@ changed directory back to home directory
   - what are the numbers before the commands?  
 command numbers--can be used to reference the commands
   - what happens when you use the command "!<number>" ?  
-terminal shows what command the number references to
+will execute the command respective to the number
   - if you ended up away from this directory, get back to the one containing this file
   - copy the output of the 'pwd' command here. What does that do?  
 output: "cd git-linux-practice/file-system/this/is/a/directory/";  
@@ -37,13 +37,13 @@ shows the contents of the home directory
   - what does 'ls .' show you  
 shows the contents of the current directory
   - what does 'ls ..' show you  
-shows the contents of the previous directory
+shows the contents of the parent directory
   - what does 'ls /' show you?  
 "bin  boot  dev  etc  home  initrd.img  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  vmlinuz"  
 references the primary directory ("edanthinne@edanthinne-t1600:/")
-  - what does 'ls this/../this/is../is/' show you? explain why.  
-says "ls: cannot access this/../this/is../is/: No such file or directory"  
-"is.." is not proper syntax?
+  - what does 'ls this/../this/is/../is/' show you? explain why.  
+shows the content of the 'is' directory  
+navigates to this, then parent folder file-system, then this, then is, then parent file this, then is
   - skim the man page
   - what switch do you use for the long listing  
 use -l switch for long listing format
@@ -93,7 +93,8 @@ the > replaces the contents of the file, while >> simply adds content to existin
 1. copy anotherfile to the 'this' directory using cp, but name it file2
   - copy the command you used here  
 cp anotherfile this  
-mv anotherfile file2
+mv anotherfile file2  
+in one command: cp anotherfile this/file2
   - skim the man page for cp. What does -r do?  
 the -r copies directories recursively--means that it copies the contents of directories and its subdirectories, so that cp doesn't skip directories
 1. use 'mv' to move somefile to 'this'
@@ -101,7 +102,7 @@ the -r copies directories recursively--means that it copies the contents of dire
 file2  is  somefile
 1. copy all files from the 'this' dir to the 'this/is/a/directory' dir in one command.
   - show that command here  
-cp this this/is/a/directory
+cp this/* this/is/a/directory
   - explain what each term doesthi  
 cp = copy; this = the source; this/is/a/directory = the destination
 1. copy everything (including directories) from the this directory into a 'that' directory
@@ -111,7 +112,7 @@ cp -r this that
 cp = copy; -r = recursively (to ensure that cp command does not skip directories); this = source; that = destination
 1.  brace expansion is the use of curly braces '{' and '}' to repeat this for every term between the braces:
   - what does "cp this/is/a/directory/{somefile,copyofsomefile}" do ?  
-"cp: cannot stat ‘this/is/a/directory/somefile’: No such file or directory"
+it creates a copy of somefile called copyofsomefile (located in this/is/a/directory directory)
   - here is [a good link](http://linuxcommand.org/lc3_lts0080.php) that explains it better than I can
 
 ## basic utilities
@@ -120,24 +121,28 @@ There are a number of basic utilities that you will encounter commonly on a linu
   - what is the advantage of 'less' over 'cat'  
 less begins at the top of the document and allows the user to scroll from the top
   - when in 'less', type '/touch' followed by 'n' and 'N'. what does this all do?  
-says "pattern not found"
+says "pattern not found" 
+finds/highlights all occurences; 'n' skips forward and 'N' skips backwards
 1. what does the output of 'ls | sort' represent?  
 the output lists the files/directories in file system in sorted, alphabetical order
   - the '|' is called a pipe and takes the output of ls and sends it into the sort command. This is one ofthe most powerful concepts of the Linux commandline. You can chain piped commands together to do all kinds of useful things.
 1. what does 'find .' do ?  
-finds all files starting with . 
+finds all files in current directory and all subdirectories
 1. what does 'find . | grep "rf"' do?q  
-finds instances in documents starting with . with an occurence of "rf" (located "./anotherfile")
+finds instances in directory or subdirectory with an occurence of "rf" (located "./anotherfile")
 1. what does the ps command do? What do you see when you do 'ps aux'  
 ps = process system  
 provides information on currently running processes  
 you see the process identification numbers, TTY or computer terminal, CPU time the process has been running, and CMD or name of command that launched the process
  - what about 'ps aux | grep root' ?  
-finds all root occurences
+finds all process owned by yser, or root
  - what about 'ps aux | grep bash' ?  
-finds all bash occurences
+finds all processes started within bash.
 1. what does 'grep -rin hello .' do?  
 locates all instances of "hello" in this file
+the -i signifies ignore case  
+the -r signifies recursively  
+the -n shows the line number within the input file of the output
 1. type 'dmesg'. what is all this stuff?  
 shows kernal messages, or messages that show hardware devices the OS can detect and configure
  - type 'dmesg | tail'   what is different?  
