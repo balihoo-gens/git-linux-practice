@@ -104,12 +104,43 @@ It would not be surprising if something goes wrong during these exercises and th
 1. Create a new branch, once again called GLP-001-BothAttempts
 git checkout -b GLP-001-BothAttempts
 1. in this new branch, type 'git rebase GLP-001-AttemptOne'  
+First, rewinding head to replay your work on top of it...  
+Applying: creating a conflict  
+Using index info to reconstruct a base tree...  
+M	git-merge-and-conflict/conflict  
+Falling back to patching base and 3-way merge...  
+Auto-merging git-merge-and-conflict/conflict  
+CONFLICT (content): Merge conflict in git-merge-and-conflict/conflict  
+Failed to merge in the changes.  
+Patch failed at 0001 creating a conflict  
+The copy of the patch that failed is found in:  
+   /home/balihoo.local/edanthinne/git-linux-practice/.git/rebase-apply/patch  
 
+When you have resolved this problem, run "git rebase --continue".  
+If you prefer to skip this patch, run "git rebase --skip" instead.  
+To check out the original branch and stop rebasing, run "git rebase --abort".  
 
-    - check git log to see what commits you now have here
-1. now type 'git rebase GLP-001-AttemptTwo'
+    - check git log to see what commits you now have here  
+commits look the same:  
+39467bb GLP-001-AttemptOne: implementation of the listof using a for loop  
+039e14c GLP-001-AttemptOne: added a new function add(a,b) to listfunc.js that returns the sum of two n  
+56f2ba8 GLP-001-AwesomeFeature: added and implemented function listof(n)  
+
+1. now type 'git rebase GLP-001-AttemptTwo'  
+First, rewinding head to replay your work on top of it...  
+Applying: GLP-001-AttemptOne: added a new function add(a,b) to listfunc.js that returns the sum of two numbers  
+Using index info to reconstruct a base tree...  
+M	git-more/listfunc.js  
+<stdin>:11: trailing whitespace.  
+1. commit this file with a well formatted commit message  
+warning: 1 line adds whitespace errors.  
+Falling back to patching base and 3-way merge...  
+Auto-merging git-more/listfunc.js  
+Applying: GLP-001-AttemptOne: implementation of the listof using a for loop  
+
     - note the failure. How does 'git status' indicate what state your repository is in now?
-    - do a 'git branch'. What branch are you on?
+    - do a 'git branch'. What branch are you on?  
+on branch GLP-001-BothAttemps
     - abort the rebase.
         - what command did you use?
         - what does 'git status' show now?.  What is different between the previous status?
@@ -117,20 +148,80 @@ git checkout -b GLP-001-BothAttempts
 1. One more time. Rebase the AttemptTwo branch again.
     - Observe that it says "Patch failed at 0002". This 'patch' is the application of the second commit from the AttemptOne branch, to this Both branch.
     - Let's say that you really want this merged, but you don't really care for this patch that fails to apply. We can skip it! use 'git rebase --skip' to skip this last patch. The rebase should complete.
-    - show the output of git status
+    - show the output of git status  
+On branch GLP-001-BothAttempts  
+Untracked files:  
+  (use "git add <file>..." to include in what will be committed)  
+
+	../basic-git/README.md~  
+	../basic-git/TestEmailContent~  
+	../file-system/README.md~  
+	../file-system/anotherfile  
+	../file-system/that/  
+	../file-system/this/  
+	../git-merge-and-conflict/README.md~  
+	../git-merge-and-conflict/conflict~  
+	../git-merge-and-conflict/the-other-git-linux-practice/  
+	README.md~  
+	listfunc.js~  
+	md  
+
+nothing added to commit but untracked files present (use "git add" to track)  
+
     - show the output of git branch
+  GLP-001-AttemptOne
+  GLP-001-AttemptTwo
+  GLP-001-AwesomeFeature
+* GLP-001-BothAttempts
+  first-branch
+  master
+
     - cat the contents of the js file
-1. go back to the AwesomeFeature branch and delete the Both branch
-1. go to the AttemptOne branch
-    - add another function, that takes a 'name' parameter and returns 'hello <name>'
-    - save and commit
+function listof(var n) {
+  //TODO: implement this function such
+  //that it returns an array of 1 through n
+if(n<=1)
+	return a;
+else{
+	return [n,listof(n--)];
+}
+}  
+
+function add(var a, var b) {
+//adds two numbers
+return a+b;
+}  
+
+function add(var a, var b) {
+//adds two numbers
+return a+b;
+}  
+
+1. go back to the AwesomeFeature branch and delete the Both branch  
+error: The branch 'GLP-001-BothAttempts' is not fully merged.  
+If you are sure you want to delete it, run 'git branch -D GLP-001-BothAttempts'.  
+git branch -D GLP-001-BothAttempts  
+1. go to the AttemptOne branch  
+git checkout GLP-001-AttemptOne
+   - add another function, that takes a 'name' parameter and returns 'hello <name>'  
+function name(var name){
+return "hello "+ name;
+}
+   - save and commit
 1. Create a new GLP-001-BothAttempts branch off AwesomeFeature
 1. Merge AttemptTwo into BothAttempts.
-    - Use rebase or merge. show here what you used
-1. Rebase AttemptOne into BothAttempts
-    - yup failed again. No big deal.
-    - edit the script file to resolve the conflict. Prefer the implementation using recursion
-    - now stage the script file using 'git add listfunc.js'. This is very important to record your changes. However, you should NOT commit the changes here, because that would create a new commit in the middle of a rebase, which is not what you want.
+   - Use rebase or merge. show here what you used  
+git merge GLP-001-AttemptTwo
+1. Rebase AttemptOne into BothAttempts  
+First, rewinding head to replay your work on top of it...  
+Applying: GLP-001-AttemptTwo: changed listof function from iterative to recursive  
+Using index info to reconstruct a base tree...  
+M	git-more/listfunc.js  
+Falling back to patching base and 3-way merge...  
+Auto-merging git-more/listfunc.js  
+   - yup failed again. No big deal.
+   - edit the script file to resolve the conflict. Prefer the implementation using recursion
+   - now stage the script file using 'git add listfunc.js'. This is very important to record your changes. However, you should NOT commit the changes here, because that would create a new commit in the middle of a rebase, which is not what you want.
     - continue rebasing using 'git rebase --continue'
     - show the output of that command here.
     - show the contents of the script file.
